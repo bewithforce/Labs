@@ -1,0 +1,34 @@
+package lab5
+
+import java.io.File
+import java.lang.Exception
+import java.util.*
+
+class Computer(val hardware : List<Data>) {
+    class Data(val type: String, val name: String){
+        override fun toString(): String {
+            return "$type: $name"
+        }
+    }
+
+    override fun toString(): String {
+        return hardware.toString()
+    }
+}
+
+fun main(){
+    val sc = Scanner(File("src/lab5/hardware.txt"))
+    val list = ArrayList<Computer.Data>()
+    while (sc.hasNextLine()){
+        val arr = (sc.nextLine()).split(" ")
+        try {
+            list.add(Computer.Data(arr[0], arr[1]))
+        }
+        catch (e: Exception){
+            println(arr)
+            return
+        }
+    }
+    val computer = Computer(list)
+    println(computer)
+}

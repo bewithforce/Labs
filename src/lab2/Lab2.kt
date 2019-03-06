@@ -1,6 +1,8 @@
+package lab2
+
 import java.util.*
 
-fun main(args : Array<String>) {
+fun main() {
     val input = Scanner(System.`in`)
     val n = input.nextInt()
     val array = Array(n, { IntArray(n) })
@@ -23,7 +25,7 @@ fun main(args : Array<String>) {
                 minIndex = j
             }
         }
-        var max = array[i][minIndex]
+        val max = array[i][minIndex]
         for (j in array[i].indices) {
             if (array[j][minIndex] > max) {
                 continue@loop

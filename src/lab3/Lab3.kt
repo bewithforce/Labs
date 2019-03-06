@@ -1,3 +1,5 @@
+package lab3
+
 class BoolVector(send_bools: ArrayList<Boolean>) {
     var bools: ArrayList<Boolean>
 
@@ -17,14 +19,12 @@ class BoolVector(send_bools: ArrayList<Boolean>) {
         val result = BoolVector(bools)
         for (i in 0 until bools.size) {
             result.bools[i] = bools[i] || second.bools[i]
-         //   println(bools[i])
-           // println(second.bools[i])
         }
         return result
     }
 
     fun negation() {
-        var new_bools = ArrayList<Boolean>(bools.size)
+        val new_bools = ArrayList<Boolean>(bools.size)
         for (b in bools) {
             new_bools.add(!b)
         }
@@ -36,14 +36,16 @@ class BoolVector(send_bools: ArrayList<Boolean>) {
     fun zeros(): Int = bools.count { e -> !e }
 }
 
-fun main(args: Array<String>) {
+fun main() {
     val array = arrayListOf(true, false, false, true)
-    var b = BoolVector(array)
-    var c = BoolVector(b.bools)
+    val b = BoolVector(array)
+    val c = BoolVector(b.bools)
     c.negation()
     println(c.bools)
-    var d = (b.conjunction(c))
+    val d = (b.conjunction(c))
     println(d.bools)
-    var e = b.disjunction(c)
+    println(d.zeros())
+    val e = b.disjunction(c)
     println(e.bools)
+    println(e.units())
 }

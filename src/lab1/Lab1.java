@@ -1,3 +1,5 @@
+package lab1;
+
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -26,13 +28,13 @@ public class Lab1 {
         if (n % 5 == 0) return period(a * 2, n / 5);
         a %= n;
         int pow = a;
-        String period = "";
+        StringBuilder period = new StringBuilder();
         while (true) {
             pow *= 10;
-            period += pow / n;
+            period.append(pow / n);
             pow %= n;
             if (pow == a) {
-                return period;
+                return period.toString();
             }
         }
     }
