@@ -4,8 +4,8 @@ import java.io.File
 import java.lang.Exception
 import java.util.*
 
-class Computer(val hardware : List<Data>) {
-    class Data(val type: String, val name: String){
+class Computer(private val hardware : List<Data>) {
+    class Data(private val type: String, private val name: String){
         override fun toString(): String {
             return "$type: $name"
         }
