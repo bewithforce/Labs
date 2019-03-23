@@ -12,6 +12,7 @@ fun main() {
         words.addAll(line.split(" "))
     }
     val checkList = ArrayList<Char>()
+    val canBeOnlyLast = ArrayList<String>()
     for(word in words){
         if (checkList.contains(word[0])){
             System.err.println("wrong args")
@@ -19,5 +20,11 @@ fun main() {
         }
         checkList.add(word[0])
     }
-    val stackOfWords = Stack<String>()
+    for(word in words){
+        if(word[0] == word[word.lastIndex])
+            continue
+        if(!checkList.contains(word.last()))
+            canBeOnlyLast.add(word)
+            continue
+    }
 }

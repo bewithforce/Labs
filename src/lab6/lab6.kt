@@ -4,12 +4,12 @@ interface Paper{
     fun write()
 }
 
-abstract class Notebook: Paper
+abstract class Notebook(private val name: String): Paper
 
-class DrawingBook: Notebook(){
+class DrawingBook(private val name: String): Notebook(name){
     override fun write() {
-        println("draw in notebook")
+        println(name)
     }
 }
 
-fun main() = DrawingBook().write()
+fun main() = DrawingBook("main").write()
