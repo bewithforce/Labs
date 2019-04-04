@@ -1,11 +1,6 @@
 package lab3
 
-class BoolVector(send_bools: ArrayList<Boolean>) {
-    var bools: ArrayList<Boolean>
-
-    init {
-        bools = ArrayList(send_bools)
-    }
+class BoolVector(var bools: ArrayList<Boolean>) {
 
     fun conjunction(second: BoolVector): BoolVector {
         val result = BoolVector(bools)
