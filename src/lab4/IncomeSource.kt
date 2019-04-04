@@ -22,7 +22,7 @@ enum class IncomeSource(val type: Int){
             4 -> return "TRANSFERS"
             5 -> return "BENEFITS"
             6 -> return "ASSISTANCE"
-            else -> return ""
         }
+        return ""
     }
 }
