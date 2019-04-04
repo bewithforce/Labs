@@ -1,0 +1,5 @@
+OS Windows_10
+Processor Intel_i7
+RAM 16GB
+HDD 1TB
+SSD 256GB
