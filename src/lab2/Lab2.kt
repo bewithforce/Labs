@@ -5,7 +5,7 @@ import java.util.*
 fun main() {
     val input = Scanner(System.`in`)
     val n = input.nextInt()
-    val array = Array(n, {IntArray(n)})
+    val array = Array(n){IntArray(n)}
     var count = 0
     for (i in array.indices) {
         for (j in array[i].indices) {
