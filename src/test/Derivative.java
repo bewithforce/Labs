@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Derivative {
+
     public static void main(String[] args) {
         List<Insurance> derivative;
         Scanner scanner = new Scanner(System.in);
