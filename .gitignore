@@ -55,4 +55,4 @@ fabric.properties
 
 .idea/workspace.xml
 lib/
-/src/test
+/src
