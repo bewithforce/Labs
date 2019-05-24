@@ -2,22 +2,30 @@ package lab9
 
 import java.io.File
 import java.util.*
-import kotlin.math.sqrt
 
 fun main(){
     val sc = Scanner(File("src/lab9/matrix.txt"))
-    val list = LinkedList<Int>()
-    while (sc.hasNextInt()){
-        list.add(sc.nextInt())
-    }
-    val tempArr = list.toArray()
-    val n = sqrt(list.size.toDouble()).toInt()
-    val array = Array(n){IntArray(n)}
-    var t = 0
-    for(i in 0 until  n)
-        for(j in 0 until n)
-            array[i][j] = tempArr[t++] as Int
+    var line = sc.nextLine()
+    val n = line.toString().length
     println("dimension: $n")
+    val array = Array(n){CharArray(n)}
+    for (j in 0 until n)
+        array[0][j] = line[j]
+    try {
+        for (i in 1 until n) {
+            line = sc.nextLine()
+            for (j in 0 until n)
+                array[i][j] = line[j]
+        }
+    } catch (e:Exception){
+        e.printStackTrace()
+        return
+    }
+    if (sc.hasNext()){
+        println("bad file")
+        return
+    }
+
     for(i in 0 until n) {
         for (j in 0 until n)
             print("${array[i][j]} ")

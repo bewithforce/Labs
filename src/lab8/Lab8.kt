@@ -5,15 +5,22 @@ import java.lang.Exception
 import java.util.*
 
 fun main() {
-    val sc = Scanner(File("src/lab4/taxes.txt"))
+    val sc = Scanner(File("src/lab8/taxes.txt"))
     val taxes = ArrayList<Tax>()
     while (sc.hasNextLine()){
         val arr = (sc.nextLine()).split(" ")
         try {
-            taxes.add(Tax(arr[0].toInt(), arr[1].toInt()))
+            if(arr.size != 2){
+                throw IllegalLineException()
+            }
+            val type = arr[0].toInt()
+            if(type < 0 || type > 6){
+                throw NonExistentTaxException()
+            }
+            taxes.add(Tax(type, arr[1].toInt()))
         }
         catch (e: Exception){
-            println(arr)
+            println(e.message)
             return
         }
     }
@@ -32,7 +39,7 @@ enum class IncomeSource(val type: Int){
     ASSISTANCE(6);
 
     companion object {
-        fun from(findType: Int): IncomeSource = IncomeSource.values().first { it.type == findType }
+        fun from(findType: Int): IncomeSource = values().first { it.type == findType }
     }
 
     override fun toString(): String {
@@ -45,7 +52,7 @@ enum class IncomeSource(val type: Int){
             5 -> return "BENEFITS"
             6 -> return "ASSISTANCE"
         }
-        throw MyException("Bad tax type")
+        throw Exception("Bad tax type")
     }
 }
 
@@ -63,4 +70,6 @@ class Tax(type: Int, quantity: Int){
     }
 }
 
-class MyException(message: String?): Throwable(message)
+class IllegalLineException(message: String = "Bad line format"): Throwable(message)
+
+class NonExistentTaxException(message: String = "Bad tax type"): Throwable(message)

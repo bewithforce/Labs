@@ -3,3 +3,7 @@ Processor Intel_i7
 RAM 16GB
 HDD 1TB
 SSD 256GB
+OS Ubuntu
+Processor Intel_i7
+RAM 16GB
+SSD 256GB

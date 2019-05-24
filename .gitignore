@@ -55,4 +55,7 @@ fabric.properties
 
 .idea/workspace.xml
 lib/
-/src
+/src/test/
+/src/Varya/
+/src/Seva/
+/src/Tanechka/

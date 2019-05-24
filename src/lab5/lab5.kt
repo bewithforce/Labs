@@ -17,7 +17,7 @@ class Computer(private val hardware : List<Data>) {
 }
 
 fun main(){
-    val sc = Scanner(File("src/lab5/hardware.txt"))
+    val sc = Scanner(File("src/ReferenceService/hardware.txt"))
     val list = ArrayList<Computer.Data>()
     while (sc.hasNextLine()){
         val arr = (sc.nextLine()).split(" ")
